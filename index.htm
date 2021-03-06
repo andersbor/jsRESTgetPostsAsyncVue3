@@ -21,14 +21,14 @@
         <input v-model.number="userId" placeholder="User Id" type="number">
         <button v-on:click="getByUserId(userId)">Get By UserId</button>
 
-        <ul v-if="posts.length">
+        <div v-if="error" style="color: red">{{error}}</div>
+
+        <ul v-if="posts.length > 0">
             <li v-for="post in posts">
                 UserId {{post.userId}} : {{post.title}}
             </li>
         </ul>
-        <div v-else>No such posts</div>
-
-        <div v-if="error" style="color: red">{{error.message}}</div>
+        <div v-else style="font-style: italic;">No such posts</div>
     </div>
 
     <script src="js/index.js"></script>

@@ -10,29 +10,31 @@ Vue.createApp({
     },
     async created() { // created() is a life cycle method, not an ordinary method
         console.log("created method called")
-        try {
-            const response = await axios.get(baseUri)
-            this.posts = await response.data
-            this.error = null
-        } catch (ex) {
-            this.posts = []
-            this.error = ex
-        }
+        this.helperGetPosts(baseUri)
     },
     methods: {
         cleanList() {
-            this.posts = []
+            this.posts = [],
+                this.error = null
         },
         async getByUserId(uid) {
-            const uri = baseUri + "?userId=" + uid
-            console.log("getByUserId: " + uri)
+            if (uid == null || uid == "") {
+                this.error = "No user id ...."
+                this.posts = []
+            } else {
+                const uri = baseUri + "?userId=" + uid
+                console.log("getByUserId: " + uri)
+                this.helperGetPosts(uri)
+            }
+        },
+        async helperGetPosts(uri) {
             try {
                 const response = await axios.get(uri)
                 this.posts = await response.data
                 this.error = null
             } catch (ex) {
                 this.posts = []
-                this.error = ex
+                this.error = ex.message
             }
         }
     }
