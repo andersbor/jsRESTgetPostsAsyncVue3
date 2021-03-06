@@ -28,6 +28,12 @@
                 UserId {{post.userId}} : {{post.title}}
             </li>
         </ul>
+        <!--table v-if="posts.length" class="table table-striped">
+            <tr v-for="post in posts">
+                <td>{{post.userId}}</td>
+                <td>{{post.title}}</td>
+            </tr>
+        </table-->
         <div v-else style="font-style: italic;">No such posts</div>
     </div>
 
