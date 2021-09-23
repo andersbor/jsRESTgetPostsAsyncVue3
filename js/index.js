@@ -8,14 +8,16 @@ Vue.createApp({
             userId: ""
         }
     },
-    async created() { // created() is a life cycle method, not an ordinary method
+    async created() {
+        // created() is a life cycle method, not an ordinary method
+        // created() is called automatically when the page is loaded
         console.log("created method called")
         this.helperGetPosts(baseUri)
     },
     methods: {
         cleanList() {
-            this.posts = [],
-                this.error = null
+            this.posts = []
+            this.error = null
         },
         async getByUserId(uid) {
             if (uid == null || uid == "") {
