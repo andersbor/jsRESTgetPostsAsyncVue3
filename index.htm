@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <!-- https://cdnjs.com/libraries/axios -->
     <script src="https://unpkg.com/vue@next"></script>
     <title>Posts, Vue3 + REST</title>
     <style>
@@ -27,11 +28,11 @@
 
         <div v-if="error" style="color: red">{{error}}</div>
 
-        <ul v-if="posts.length > 0">
+        <ol v-if="posts.length > 0">
             <li v-for="post in posts">
                 UserId {{post.userId}}  : {{post.title}} 
             </li>
-        </ul>
+        </ol>
         <!--table v-if="posts.length" class="table table-striped">
             <tr v-for="post in posts">
                 <td>{{post.userId}}</td>
