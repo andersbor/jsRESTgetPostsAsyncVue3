@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
-    <!-- https://cdnjs.com/libraries/axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Posts, Vue3 + REST</title>
     <style>
@@ -30,7 +29,7 @@
 
         <ol v-if="posts.length > 0">
             <li v-for="post in posts">
-                UserId {{post.userId}}  : {{post.title}} 
+                UserId {{post.userId}} : {{post.title}}
             </li>
         </ol>
         <!--table v-if="posts.length" class="table table-striped">
@@ -42,7 +41,7 @@
         <div v-else style="font-style: italic;">No such posts</div>
     </div>
 
-    <script src="js/index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

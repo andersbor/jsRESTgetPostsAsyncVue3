@@ -20,7 +20,7 @@ Vue.createApp({
                 const response = await axios.get(uri)
                 this.posts = await response.data
                 this.error = null
-            } catch (ex) {
+            } catch (ex) { // non 2xx status code or no connection to server
                 this.posts = []
                 this.error = ex.message
             }
